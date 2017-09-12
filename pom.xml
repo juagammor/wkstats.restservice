@@ -1,0 +1,97 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.juanra</groupId>
+  <artifactId>wkstats.restservice</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>wkstats.restservice Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  <properties>
+  	<jersey-version>1.19.4</jersey-version>
+  </properties>
+  
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <!-- DEPENDENCIAS DE JERSEY -->
+    <!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-servlet -->
+	<dependency>
+	    <groupId>com.sun.jersey</groupId>
+	    <artifactId>jersey-servlet</artifactId>
+	    <version>${jersey-version}</version>
+	</dependency>
+	    
+    <!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-json -->
+	<dependency>
+	    <groupId>com.sun.jersey</groupId>
+	    <artifactId>jersey-json</artifactId>
+	    <version>${jersey-version}</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-core -->
+	<dependency>
+	    <groupId>com.sun.jersey</groupId>
+	    <artifactId>jersey-core</artifactId>
+	    <version>${jersey-version}</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-server -->
+	<dependency>
+	    <groupId>com.sun.jersey</groupId>
+	    <artifactId>jersey-server</artifactId>
+	    <version>${jersey-version}</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/com.sun.jersey/jersey-bundle -->
+	<dependency>
+	    <groupId>com.sun.jersey</groupId>
+	    <artifactId>jersey-bundle</artifactId>
+	    <version>${jersey-version}</version>
+	</dependency>
+
+    <!-- JAVAX SERVLET API -->
+    <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>javax.servlet-api</artifactId>
+	    <version>4.0.0</version>
+	    <scope>provided</scope>
+	</dependency>
+	
+	<!-- JSON -->
+	<!-- https://mvnrepository.com/artifact/org.json/json -->
+	<dependency>
+	    <groupId>org.json</groupId>
+	    <artifactId>json</artifactId>
+	    <version>20170516</version>
+	</dependency>
+	
+	<!-- ASM -->
+	<!-- https://mvnrepository.com/artifact/asm/asm -->
+	<dependency>
+	    <groupId>asm</groupId>
+	    <artifactId>asm</artifactId>
+	    <version>3.3.1</version>
+	</dependency>
+	
+	<!-- MONGODB -->
+    <!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
+	<dependency>
+	    <groupId>org.mongodb</groupId>
+	    <artifactId>mongo-java-driver</artifactId>
+	    <version>3.5.0</version>
+	</dependency>
+    
+    
+  </dependencies>
+  <build>
+    <finalName>wkstats.restservice</finalName>
+  </build>
+</project>

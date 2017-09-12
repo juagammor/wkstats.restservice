@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html ng-app="wkStatsApp" ng-controller="mainCtrl">
+<head>
+	<meta charset="UTF-8">
+	<title>WKStats - Pruebas</title>
+
+
+	<link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css">
+
+	<!-- JS de Angular -->
+	<script type="text/javascript" src="js/angular/angular.min.js"></script>
+	<script type="text/javascript" src="js/angular/angular-route.min.js"></script>
+
+
+	<script type="text/javascript" src="js/app.js"></script>
+
+	<script type="text/javascript" src="servicios/temporada_service.js"></script>
+	<script type="text/javascript" src="servicios/estadistica_service.js"></script>
+	<script type="text/javascript" src="servicios/jugador_service.js"></script>
+</head>
+<body style="font-size: 13px;">
+	
+	<div class="container">
+		<label for="temporadacombo">Temporada:</label>
+		<select name="temporadacombo" id="temporadacombo" ng-model="temporadaSlct">
+			<option value="">Todas</option>
+			<option ng-repeat="temporada in temporadas" ng-value="temporada.anyos">{{temporada.anyos}}</option>
+		</select>
+		<br>
+
+		<label for="jugadorTxt">Jugador:</label>
+		<input name="jugadorTxt" id="jugadorTxt" type="text" class="form-control" ng-model="jugadorFlt" width="300px"><br>
+		<label for="jornadaNmb" >Jornada:</label>
+		<input name="jornadaNmb" id="jornadaNmb" type="text" class="form-control" ng-model="jornadaFlt" width="150px">
+	</div>
+
+	<br>
+
+	<div class="container">
+		{{temporadaSlct}} - {{jugadorFlt}} - {{jornadaFlt}}
+	</div>
+
+	<br>
+	<div class="container">
+		<table class="table-striped" style="width: 100%; font-size: 11px;">
+			<tr>
+				<!-- td>temporada</td -->
+				<td>Fecha</td>
+				<td>J</td>
+				<td>Rival</td>
+				<td>Dorsal</td>
+				<td>Nombre</td>
+				<td>Key</td>
+				<td>Min</td>
+				<td>Pts</td>
+				<td colspan="3">T2</td>
+				<td colspan="3">T3</td>
+				<td colspan="3">TL</td>
+				<td colspan="3">Reb.</td>
+				<td>A</td>
+				<td>R</td>
+				<td>C</td>
+				<td colspan="2">Tapones</td>
+				<td>M</td>
+				<td colspan="2">F</td>
+				<td>+/-</td>
+				<td>Val</td>
+			</tr>
+			<tr>
+				<!-- td>temporada</td -->
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>C</td>
+				<td>I</td>
+				<td>%</td>
+				<td>C</td>
+				<td>I</td>
+				<td>%</td>
+				<td>C</td>
+				<td>I</td>
+				<td>%</td>
+				<td>Tot</td>
+				<td>D</td>
+				<td>O</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>F</td>
+				<td>C</td>
+				<td>&nbsp;</td>
+				<td>Com.</td>
+				<td>Rec.</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+			<tr ng-repeat="stat in estadisticas.data|filter:{temporada: temporadaSlct, nombre: jugadorFlt, jornada: jornadaFlt}">
+				<!-- td>{{stat.temporada}}</td -->
+				<td>{{stat.fecha}}</td>
+				<td>{{stat.jornada}}</td>
+				<td>{{stat.rival}}</td>
+				<td>{{stat.dorsal}}</td>
+				<td>{{stat.nombre}}</td>
+				<td>{{stat.claveJugador}}</td>
+				<td>{{stat.minutos}}</td>
+				<td>{{stat.puntos}}</td>
+				<td>{{stat.t2Conv}}</td>
+				<td>{{stat.t2Total}}</td>
+				<td>{{stat.t2Porc}}</td>
+				<td>{{stat.t3Conv}}</td>
+				<td>{{stat.t3Total}}</td>
+				<td>{{stat.t3Porc}}</td>
+				<td>{{stat.t1Conv}}</td>
+				<td>{{stat.t1Total}}</td>
+				<td>{{stat.t1Porc}}</td>
+				<td>{{stat.rebotesTotales}}</td>
+				<td>{{stat.rebotesDef}}</td>
+				<td>{{stat.rebotesOf}}</td>
+				<td>{{stat.asistencias}}</td>
+				<td>{{stat.recuperaciones}}</td>
+				<td>{{stat.contraataques}}</td>
+				<td>{{stat.taponesFavor}}</td>
+				<td>{{stat.taponesContra}}</td>
+				<td>{{stat.mates}}</td>
+				<td>{{stat.faltas}}</td>
+				<td>{{stat.faltasRecibidas}}</td>
+				<td>{{stat.masmenos}}</td>
+				<td>{{stat.valoracion}}</td>
+			</tr>
+		</table>
+	</div>
+
+</body>
+</html>
