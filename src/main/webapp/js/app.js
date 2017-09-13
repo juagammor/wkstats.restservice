@@ -11,6 +11,7 @@ app.controller('mainCtrl', ['$scope', 'Temporadas', 'Estadisticas', 'Jugadores',
 	$scope.estadisticas = {};
 	
 	$scope.jugadores = {};
+	$scope.jugadoresSlct = "";
 
 	$scope.jugadorFlt = "";
 	$scope.jornadaFlt = "";
@@ -27,7 +28,7 @@ app.controller('mainCtrl', ['$scope', 'Temporadas', 'Estadisticas', 'Jugadores',
 	
 	Jugadores.obtenerJugadores().then(
 		function(players){
-			$scope.jugadores = players;
+			$scope.jugadores = players.data;
 		}
 	);
 	

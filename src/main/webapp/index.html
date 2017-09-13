@@ -29,7 +29,16 @@
 		<br>
 
 		<label for="jugadorTxt">Jugador:</label>
-		<input name="jugadorTxt" id="jugadorTxt" type="text" class="form-control" ng-model="jugadorFlt" width="300px"><br>
+		<input name="jugadorTxt" id="jugadorTxt" type="text" class="form-control" ng-model="jugadorFlt" width="300px">
+		<br>
+		
+		<select name="jugadorcombo" id="jugadorcombo" ng-model="jugadoresSlct">
+			<option value="">Todos</option>
+			<option ng-repeat="jugador in jugadores" ng-value="jugador.clave">{{jugador.clave + " - " + jugador.nombre}}</option>
+			 <!--  + " - " + jugador.nombre}}</option -->
+		</select>
+		
+		<br>
 		<label for="jornadaNmb" >Jornada:</label>
 		<input name="jornadaNmb" id="jornadaNmb" type="text" class="form-control" ng-model="jornadaFlt" width="150px">
 	</div>
@@ -37,7 +46,7 @@
 	<br>
 
 	<div class="container">
-		{{temporadaSlct}} - {{jugadorFlt}} - {{jornadaFlt}}
+		{{temporadaSlct}} - {{jugadorFlt}} - {{jugadoresSlct}} -  {{jornadaFlt}}
 	</div>
 
 	<br>
